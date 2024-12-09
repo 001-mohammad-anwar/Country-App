@@ -33,7 +33,7 @@ const Header = ({theme}) => {
         <div className="headerBox">
           <div className="text">
             <h2>
-              <Link to="/">Where in the world?</Link>
+              <Link to="/">Where in the world</Link>
             </h2>
           </div>
           <div  onClick={()=>{
