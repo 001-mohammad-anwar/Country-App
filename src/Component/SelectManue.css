@@ -1,0 +1,45 @@
+/* Container for select dropdown */
+.selectContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+  }
+  
+  /* Styling the select dropdown */
+  .SelectManue {
+    width: 300px;
+    padding: 12px 16px; /* More balanced padding */
+    font-size: 16px;
+    border: 1px solid #ccc; /* Soft border */
+    border-radius: 8px; /* Rounded corners */
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right 16px center; /* Position the arrow */
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Hover and Focus Effects */
+  .SelectManue:hover {
+    border-color: #888; /* Change border color on hover */
+  }
+  
+  .SelectManue:focus {
+    border-color: #0052cc; /* Blue border on focus */
+    box-shadow: 0 0 5px rgba(0, 82, 204, 0.5); /* Light blue glow on focus */
+    outline: none; /* Remove default focus outline */
+  }
+  
+  /* Placeholder Styling */
+  .SelectManue option:first-child {
+    color: #888; /* Gray color for the placeholder option */
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .SelectManue {
+      width: 80%; /* Make select dropdown responsive on smaller screens */
+    }
+  }
+  

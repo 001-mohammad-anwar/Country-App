@@ -1,0 +1,151 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body{
+    --background-color: white;
+    --text-color:black;
+    --elements-color:white;
+  }
+
+  .DetailContainer {
+    display: flex;
+    flex-direction: column;
+    border-radius: 6px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px;
+    background-color: var(--background-color);
+    color: var(--text-color); 
+    min-height: calc(100vh - 67px); 
+  }
+  
+  .DetailContainer.Dark{
+    --background-color: hsl(207 , 26% , 17%);
+    --text-color: white;
+    --elements-color: hsl(209 , 23% , 22%);
+    
+  }
+
+  .Dark{
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  .pre {
+    margin-top: 50px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .CountryDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+
+  main.Dark{
+    --background-color: hsl(207 , 26% , 17%);
+    --text-color: white;
+    --elements-color: hsl(209 , 23% , 22%);
+  }
+
+  .Details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 44px;
+    margin-top: 50px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 80px;
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  .Details h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+  }
+  
+  .AllInfo {
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .Left, .Right {
+    flex: 1 1 300px; /* Allows each section to grow or shrink */
+  }
+  
+  .Left p, .Right p {
+    margin: 10px 0;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  .DetailsCountryImage {
+    border-radius: 5px;
+    max-width: 300px;
+    max-height: 300px;
+    overflow: hidden;
+    margin-top: 0;
+  }
+  
+  .DetailsCountryImage img {
+    width: 100%;
+    height: auto; /* Make the image responsive */
+  }
+  
+  .Border {
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+  
+  .Border b {
+    font-size: 1.1rem;
+  }
+  
+  @media (max-width: 768px) {
+    .AllInfo {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .Details {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    /* .DetailsCountryImage {
+      margin-bottom: 20px;
+    } */
+  
+    .Left, .Right {
+      flex: 1 1 100%; /* Stacks the left and right sections */
+    }
+  
+    .Border {
+      max-width: 100%;
+    }
+  }
+  
+
+  .BorderCuntries a{
+    display: flex;
+    padding:3px 16px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-size: 14px;
+}

@@ -1,0 +1,47 @@
+/* General Reset for Box Model */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .CardList {
+    /* display: flex; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(300px, 1fr));
+    flex-wrap: wrap;
+    justify-content: space-evenly; /* Evenly distribute cards */
+    gap: 20px; /* Adjusted gap for better spacing */
+    padding: 16px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #F7F7F7;
+    border-radius: 8px; /* Rounded corners for a cleaner look */
+    overflow: hidden; /* Prevent cards from overflowing */
+  }
+  
+  /* .CardList.Dark{
+    background-color: #333;
+    color: white;
+  } */
+  @media (max-width: 1024px) {
+    .CardList {
+      gap: 16px; /* Slightly smaller gap for tablets */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .CardList {
+      justify-content: center; /* Center cards for smaller screens */
+      gap: 12px; /* Reduce gap for better mobile experience */
+      padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .CardList {
+      gap: 8px; /* Even smaller gap for very small screens */
+      padding: 8px;
+    }
+  }
+  

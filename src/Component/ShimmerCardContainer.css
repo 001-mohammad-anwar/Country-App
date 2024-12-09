@@ -1,0 +1,7 @@
+.ShimmerContainer{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 95px;
+    padding: 16px;
+    justify-content: center;
+}

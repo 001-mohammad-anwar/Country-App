@@ -1,0 +1,48 @@
+.ShimmerCardContainer {
+    /* margin-left: 20px; */
+    width: 290px;
+    height: 340px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Card shadow */
+    overflow: hidden;
+    background-color: #e3e3e3;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Image area */
+  .ShimmerImage {
+    width: 100%;
+    height: 50%; 
+    background-color: #e3e3e3;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    animation: shimmer 1.5s infinite linear;
+  }
+  
+  /* Text area */
+  .textShimmer {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .title, .population, .region, .capital {
+    height: 20px;
+    background-color: #e3e3e3;
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    animation: shimmer 1.5s infinite linear;
+    border-radius: 5px;
+  }
+  
+  /* Add animation for shimmer effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -200px 0;
+    }
+    100% {
+      background-position: 200px 0;
+    }
+  }
+  

@@ -1,0 +1,70 @@
+/* General card styling */
+.Cardcontainer {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .card {
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for card */
+    overflow: hidden;
+    /* background-color: #fff; */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  }
+  
+  .image {
+    width: 100%;
+    height: 200px; /* Fixed height for the image container */
+    overflow: hidden;
+  }
+  
+  .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area without distorting */
+    object-position: center; /* Keeps the image centered */
+  }
+  
+  .cardText {
+    padding: 15px;
+  }
+  
+  .cardText h1 {
+    /* color: white; */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .cardText p {
+    margin: 5px 0;
+    /* color: #555; */
+  }
+  
+  .cardText b {
+    font-weight: bold;
+  }
+  
+ a{
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* @media (max-width:768px) {
+      body{
+               display: none;
+      }
+  } */
+
+  
+  /* @media (max-width:500px) {
+    body{
+             display: block;
+    }
+} */

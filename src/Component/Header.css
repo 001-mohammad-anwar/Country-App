@@ -1,0 +1,90 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    --background-color: white;
+    --text-color:black;
+    --elements-color:white;
+    font-family: 'Nunito', sans-serif;
+    background-color: var(--background-color); 
+    color: var(--text-color); 
+}
+main{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+main.Dark{
+    --background-color: hsl(207 , 26% , 17%);
+    --text-color: white;
+    --elements-color: hsl(209 , 23% , 22%);
+}
+
+
+header.Dark{
+    --background-color: #2A3946;
+    --text-color: white;
+    --elements-color: #2A3946;
+}
+
+.headerBox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 18px; 
+    margin: 0 auto;
+    max-width: 1200px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 1.2); 
+    border-radius: 8px;
+}
+
+header {
+    position: sticky;
+    color: var(--text-color);
+    top: 0;
+    z-index: 1;
+    background-color: var(--background-color);
+    padding: 1px 0; 
+}
+
+
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .headerBox {
+        padding: 10px 16px; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 360px) {
+    .headerBox {
+        flex-wrap: wrap; /* Allow the header to wrap on very small screens */
+        padding: 10px 16px; /* Adjust padding for mobile */
+    }
+
+    .headerBox > * {
+        flex: 1 1 100%; /* Make sure elements take up full width on small screens */
+        text-align: center; /* Center text on mobile */
+    }
+    
+    /* Adjust font size for smaller screens */
+    .headerBox h1,
+    .headerBox p {
+        font-size: 1rem;
+    }
+}
+
+.text h2 a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.Dark{
+    background-color: #333;
+    color: #fafafa;
+}
