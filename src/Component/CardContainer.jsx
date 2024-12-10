@@ -1,65 +1,50 @@
 import { useState, useEffect, useContext } from 'react';
 import Card from './Card';
 import './CardContainer.css';
-import ShimmerCard from './ShimmerCard';
 import ShimmerCardContainer from './ShimmerCardContainer';
-import { useOutletContext } from 'react-router';
 import { ThemeContext } from './contexts/ThemeContext';
 
-const CardContainer = ({query}) => {
-  const [darkMode] = useContext(ThemeContext)
-  // console.log(a)
-  // const [darkMode] = useOutletContext()
-  // console.log(theme)
-  const [countryData , setCountryData] = useState([]);
-  
- 
-//  if(countryData === 0){
-//   fetch("https://restcountries.com/v3.1/all")
-//   .then(response => response.json())
-//   .then((data)=>{
-//     setCountryData(data);
-//   }).catch((err) => {
-//     console.log("Error featiching countries data",err);
-//   });
-//  }
+const CardContainer = ({ query }) => {
+  const [darkMode] = useContext(ThemeContext);
+  const [countryData, setCountryData] = useState([]);
 
- useEffect(() =>{
-  fetch("https://restcountries.com/v3.1/all")
-  .then(response => response.json())
-  .then((data)=>{
-    setCountryData(data);
-  }).catch((err) => {
-    console.log("Error featiching countries data",err);
-  });
-  
-  // return (()=>{
-  //   console.log("clean up function called");
-  // })
+  useEffect(() => {
+    fetch("https://restcountries.com/v3.1/all")
+      .then(response => response.json())
+      .then((data) => {
+        // console.log(data);
+        setCountryData(data);
+      })
+      .catch((err) => {
+        console.log("Error fetching countries data");
+      });
+  }, []);
 
- },[])
-   
-// const cardItems = new Array(24).fill(null);
-// const FilterCountryData = country.filter((country) => country.name.common.toLowerCase().includes('india'))
-// console.log(FilterCountryData);
+  // Filter country data based on the query (case-insensitive)
+  const filteredCountryData = countryData.filter((country) => 
+    country.name.common.toLowerCase().includes(query.toLowerCase()) ||
+    country.region.toLowerCase().includes(query.toLowerCase())
+  );
 
   return (
-    <>
     <div className={`CardList ${darkMode ? 'Dark' : ''}`}>
-      {!countryData.length?<ShimmerCardContainer/>:countryData.filter((country) =>
-              country.name.common.toLowerCase().includes(query) || country.region.toLowerCase().includes(query)
-            ).map((element, index) => (
-        <Card key={index} 
-          title = {element.name.common}
-          image = {element.flags.svg}
-          Population= {element.population.toLocaleString("en-IN")}
-          region = {element.region}
-          Capital = {element.capital}
-          data = {element}
-        />
-      ))}
+      {/* Show shimmer loader if no data is available */}
+      {!countryData.length ? (
+        <ShimmerCardContainer />
+      ) : (
+        filteredCountryData.map((country) => (
+          <Card
+            key={country.name.common}  // Use a unique identifier for key
+            title={country.name.common}
+            image={country.flags.svg}
+            Population={country.population?.toLocaleString("en-IN") || 'N/A'}
+            region={country.region}
+            Capital={country.capital ? country.capital[0] : 'N/A'}
+            data={country}
+          />
+        ))
+      )}
     </div>
-    </>
   );
 };
 
