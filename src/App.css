@@ -3,3 +3,12 @@
     background-color: black; 
     color: #333; 
 } */
+
+.back{
+ 
+    cursor: pointer;
+    border-radius: 6px;
+    padding-inline: 20px;
+    box-shadow: 0 0 7px #0003;
+    padding-block: 12px;
+}

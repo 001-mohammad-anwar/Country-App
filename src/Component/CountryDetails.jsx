@@ -15,7 +15,7 @@ const CountryDetails = () => {
   // console.log(param);
   const countryName = param.country;
   const {state} = useLocation();
-  console.log(state);
+  // console.log(state);
 
   useEffect(() => {
       

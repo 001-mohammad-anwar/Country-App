@@ -1,3 +1,3 @@
 import { createContext } from "react";
 
-export const ThemeContext = createContext('jcsnj');
+export const ThemeContext = createContext('');

@@ -33,9 +33,9 @@ const CardContainer = ({query}) => {
     console.log("Error featiching countries data",err);
   });
   
-  return (()=>{
-    console.log("clean up function called");
-  })
+  // return (()=>{
+  //   console.log("clean up function called");
+  // })
 
  },[])
    
