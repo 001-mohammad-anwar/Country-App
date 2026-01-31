@@ -1,70 +1,78 @@
 /* General card styling */
 .Cardcontainer {
     display: flex;
+    flex-wrap: wrap;           /* 🔥 important */
     justify-content: center;
+    gap: 20px;                 /* space between cards */
     padding: 20px;
-  }
-  
-  .card {
+}
+
+/* Card */
+.card {
     width: 300px;
+    max-width: 100%;           /* 🔥 prevents overflow */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow for card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
-    /* background-color: #fff; */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: scale(1.05); /* Zoom effect on hover */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
-  }
-  
-  .image {
+}
+
+/* Hover only on non-touch devices */
+@media (hover: hover) {
+    .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+    }
+}
+
+/* Image */
+.image {
     width: 100%;
-    height: 200px; /* Fixed height for the image container */
+    height: 200px;
     overflow: hidden;
-  }
-  
-  .image img {
+}
+
+.image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the area without distorting */
-    object-position: center; /* Keeps the image centered */
-  }
-  
-  .cardText {
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Text */
+.cardText {
     padding: 15px;
-  }
-  
-  .cardText h1 {
-    /* color: white; */
-    font-size: 1.5rem;
+}
+
+.cardText h1 {
+    font-size: 1.4rem;
     margin-bottom: 10px;
-  }
-  
-  .cardText p {
+}
+
+.cardText p {
     margin: 5px 0;
-    /* color: #555; */
-  }
-  
-  .cardText b {
+}
+
+.cardText b {
     font-weight: bold;
-  }
-  
- a{
+}
+
+/* Link reset */
+a {
     text-decoration: none;
     color: inherit;
-  }
+}
 
-  /* @media (max-width:768px) {
-      body{
-               display: none;
-      }
-  } */
-
-  
-  /* @media (max-width:500px) {
-    body{
-             display: block;
+/* 📱 Mobile – ONE card, full width */
+@media (max-width: 460px) {
+    .card {
+        width: 100%;
     }
-} */
+}
+
+/* 📱 Tablet */
+@media (max-width: 714px) {
+    .card {
+        width: 340px;
+    }
+}
