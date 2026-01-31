@@ -1,8 +1,14 @@
 .back{
- 
+    width: fit-content;
     cursor: pointer;
     border-radius: 6px;
     padding-inline: 20px;
     box-shadow: 0 0 7px #0003;
     padding-block: 12px;
+    
+}
+
+.back:hover{
+    background-color: hsl(205, 17%, 25%);
+    transition: background-color 0.3s ease-out, width 0.3s ease-out;
 }

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import CardContainer from "./CardContainer";
 import Choose from "./Choose";
-import { useOutletContext } from "react-router";
+// import { useOutletContext } from "react-router";
 import { ThemeContext } from "./contexts/ThemeContext";
 const Home = () => {
     const [query, setQuery] = useState("");
